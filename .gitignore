@@ -1,0 +1,7 @@
+*.class
+*.jar
+*.xml
+*.iml
+config.txt
+.idea/
+out/
