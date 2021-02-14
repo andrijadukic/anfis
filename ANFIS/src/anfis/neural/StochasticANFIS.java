@@ -1,10 +1,10 @@
-package anfis.network;
+package anfis.neural;
 
 import anfis.ml.loss.LossFunction;
 import anfis.ml.sampling.Sample;
 import anfis.ml.sampling.Sampling;
 import anfis.ml.stopping.StoppingCondition;
-import anfis.ml.sampling.SourceOfRandomness;
+import anfis.rand.SourceOfRandomness;
 
 import java.util.Collections;
 import java.util.List;

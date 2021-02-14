@@ -1,4 +1,4 @@
-package anfis.network;
+package anfis.neural;
 
 import anfis.ml.loss.LossFunction;
 import anfis.ml.sampling.Sample;

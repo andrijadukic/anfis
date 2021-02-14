@@ -1,4 +1,4 @@
-package anfis.ml.sampling;
+package anfis.rand;
 
 import java.util.Random;
 

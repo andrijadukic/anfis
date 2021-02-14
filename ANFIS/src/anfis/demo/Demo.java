@@ -1,6 +1,6 @@
 package anfis.demo;
 
-import anfis.network.StochasticANFIS;
+import anfis.neural.StochasticANFIS;
 import anfis.ml.loss.LossFunction;
 import anfis.ml.loss.LossFunctions;
 import anfis.ml.sampling.Sample;
@@ -9,7 +9,6 @@ import anfis.ml.stopping.StoppingConditions;
 import anfis.ml.observers.NthIterationObserver;
 import anfis.ml.observers.StandardOutputLogger;
 
-import java.io.IOException;
 import java.util.*;
 
 public class Demo {

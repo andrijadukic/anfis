@@ -1,4 +1,4 @@
-package anfis.network;
+package anfis.neural;
 
 import anfis.ml.IncrementalMachineLearningModel;
 import anfis.ml.exceptions.*;
@@ -9,7 +9,7 @@ import anfis.ml.observers.IterationStatistics;
 import anfis.ml.sampling.Sample;
 import anfis.ml.stopping.StoppingCondition;
 import anfis.ml.stopping.StoppingConditions;
-import anfis.ml.sampling.SourceOfRandomness;
+import anfis.rand.SourceOfRandomness;
 
 import java.io.IOException;
 import java.nio.file.Files;
