@@ -82,11 +82,13 @@ public abstract class ANFIS extends AbstractMachineLearningSubject implements In
     @Override
     public final IncrementalMachineLearningModel fit(List<Sample> samples) {
         checkEqualDimensions(samples);
+
         dimension = samples.get(0).x().length;
         initialize(coef, linCoef, dimension);
-        isFitted = true;
 
-        return train(samples);
+        train(samples);
+        isFitted = true;
+        return this;
     }
 
     private void checkEqualDimensions(List<Sample> samples) {
@@ -98,7 +100,7 @@ public abstract class ANFIS extends AbstractMachineLearningSubject implements In
     private ANFIS train(List<Sample> samples) {
         int iter = 0;
         while (true) {
-            IterationStatistics statistics = IterationStatistics.of(() -> lossFunction.score(this, samples), iter);
+            IterationStatistics statistics = IterationStatistics.of(() -> lossFunction.score(this::forwardPass, samples), iter);
 
             if (stoppingCondition.isMet(statistics)) break;
 
@@ -182,9 +184,6 @@ public abstract class ANFIS extends AbstractMachineLearningSubject implements In
     @Override
     public final double[] predict(double[] input) {
         if (!isFitted) throw new ModelNotFittedException(getClass());
-
-        if (input.length != dimension) throw new InputDimensionMismatch(dimension, input.length);
-
         return forwardPass(input);
     }
 
@@ -194,6 +193,8 @@ public abstract class ANFIS extends AbstractMachineLearningSubject implements In
     private double[] cachedConsequents;
 
     private double[] forwardPass(double[] input) {
+        if (input.length != dimension) throw new InputDimensionMismatch(dimension, input.length);
+
         double prediction = 0.;
         double weightsSum = 0.;
         double[][] memberships = new double[numberOfRules][];

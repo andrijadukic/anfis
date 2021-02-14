@@ -34,7 +34,7 @@ public class Demo {
     private static final LossFunction LOSS_FUNCTION = LossFunctions.MSE();
     private static final StoppingCondition MAX_ITER_LARGE = StoppingConditions.maxIter(50_000);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         List<Sample> trainingSamples = sample(FUNCTION, LOWER_BOUND, UPPER_BOUND);
 
         var stochasticANFIS = new StochasticANFIS(NUMBER_OF_RULES, ETA_1, ETA_2, LOSS_FUNCTION, MAX_ITER_LARGE, 1);
