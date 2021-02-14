@@ -1,11 +1,11 @@
 package anfis.ml.observers;
 
-public final class NthIterationObserver implements MachineLearningModelObserver {
+public final class NthIterationObserver implements ModelObserver {
 
-    private final MachineLearningModelObserver observer;
+    private final ModelObserver observer;
     private final int step;
 
-    public NthIterationObserver(MachineLearningModelObserver observer, int step) {
+    public NthIterationObserver(ModelObserver observer, int step) {
         this.observer = observer;
         this.step = step;
     }

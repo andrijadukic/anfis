@@ -3,21 +3,21 @@ package anfis.ml.observers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbstractMachineLearningSubject implements MachineLearningModelSubject {
+public class AbstractModelSubject implements ModelSubject {
 
-    private final List<MachineLearningModelObserver> observers;
+    private final List<ModelObserver> observers;
 
-    public AbstractMachineLearningSubject() {
+    public AbstractModelSubject() {
         observers = new ArrayList<>();
     }
 
     @Override
-    public void addObserver(MachineLearningModelObserver observer) {
+    public void addObserver(ModelObserver observer) {
         observers.add(observer);
     }
 
     @Override
-    public void removeObserver(MachineLearningModelObserver observer) {
+    public void removeObserver(ModelObserver observer) {
         observers.remove(observer);
     }
 

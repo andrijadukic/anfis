@@ -4,7 +4,7 @@ import anfis.ml.IncrementalMachineLearningModel;
 import anfis.ml.exceptions.*;
 import anfis.ml.loss.LossFunction;
 import anfis.ml.loss.LossFunctions;
-import anfis.ml.observers.AbstractMachineLearningSubject;
+import anfis.ml.observers.AbstractModelSubject;
 import anfis.ml.observers.IterationStatistics;
 import anfis.ml.sampling.Sample;
 import anfis.ml.stopping.StoppingCondition;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public abstract class ANFIS extends AbstractMachineLearningSubject implements IncrementalMachineLearningModel {
+public abstract class ANFIS extends AbstractModelSubject implements IncrementalMachineLearningModel {
 
     private static final LossFunction DEFAULT_LOSS_FUNCTION = LossFunctions.MSE();
     private static final StoppingCondition DEFAULT_STOPPING_CONDITION = StoppingConditions.maxIter(50_000);

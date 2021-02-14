@@ -1,6 +1,6 @@
 package anfis.ml.observers;
 
-public interface MachineLearningModelObserver {
+public interface ModelObserver {
 
     void update(IterationStatistics statistics);
 }

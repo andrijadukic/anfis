@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class IterationStatisticsCollector implements MachineLearningModelObserver {
+public class IterationStatisticsCollector implements ModelObserver {
 
     private final List<IterationStatistics> collection;
 

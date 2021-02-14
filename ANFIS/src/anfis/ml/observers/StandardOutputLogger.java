@@ -1,6 +1,6 @@
 package anfis.ml.observers;
 
-public final class StandardOutputLogger implements MachineLearningModelObserver {
+public final class StandardOutputLogger implements ModelObserver {
 
     @Override
     public void update(IterationStatistics statistics) {
